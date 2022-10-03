@@ -1,0 +1,35 @@
+{
+  "name": "joi-schema-generator",
+  "version": "1.1.9",
+  "description": "generate joi schema from json files",
+  "homepage": "https://github.com/kiriti999/joi-schema-generator#readme",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "generateJoiSchema": "./index.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "lint": "eslint -c .eslintrc.json --ext js,ts,tsx",
+    "lint:fix": "npm run lint -- --fix",
+    "preinstall": "npm list prettier@2.6.2 -g || npm install prettier@2.6.2 -g",
+    "postinstall": "npm list eslint@8.13.0 -g || npm install eslint@8.13.0 -g",
+    "compress": "uglifyjs --output dist/index.js --compress --mangle -- src/index.js",
+    "build": "cp -R src/*.js package.json README.md dist && npm run compress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kiriti999/joi-schema-generator.git"
+  },
+  "author": "Kiriti Komaragiri",
+  "license": "ISC",
+  "dependencies": {
+    "joi": "^17.6.0",
+    "joi-machine": "^3.0.0"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.15.4"
+  }
+}

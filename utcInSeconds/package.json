@@ -1,0 +1,21 @@
+{
+  "name": "utcs",
+  "version": "4.0.6",
+  "description": "Simple program to convert utc or local time(HH:MM:SS) to seconds",
+  "main": "bin/utcs.js",
+  "scripts": {
+    "test": "node utcs.js"
+  },
+  "bin": {
+    "utcs": "./bin/utcs.js"
+  },
+  "keywords": [
+    "utc or local time in seconds"
+  ],
+  "author": "kiriti",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kiriti999/utcInSeconds.git"
+  }
+}

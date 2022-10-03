@@ -1,0 +1,40 @@
+<section id="categories">
+  <div class="container p-5">
+    <app-message></app-message>
+    <h4 class="display-4">Categories</h4>
+    <hr>
+    <div *ngIf="!categories" class="m-auto">
+      <h2 class="text-center display-3 mt-5">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h2>
+    </div>
+    <div *ngIf="categories" class="list-group">
+      <div *ngFor="let category of categories" class="flex">
+        <a routerLink="/categories/{{ category._id }}" class="list-group-item list-group-item-action" *ngIf="!editMode">
+          {{ category.name }}
+        </a>
+        <input [(ngModel)]="category.name" class="form-control" *ngIf="editMode" />
+        <button class="btn btn-sm btn-info btn-edit" *ngIf="!editMode" id="{{category._id}}"
+          (click)="editName(category.name)">Edit Name <i class="fa fa-edit"></i></button>
+        <button *ngIf="editMode" class="btn btn-sm btn-info btn-save" (click)="saveEdit($event, category)">Save</button>
+        <button *ngIf="editMode" class="btn btn-sm btn-info btn-cancel" (click)="cancelEdit()">Cancel</button>
+        <!-- <button class="btn btn-sm btn-info btn-delete" id="{{category._id}}" (click)="deleteCategory($event)">Delete
+          Category <i class="fa fa-trash" aria-hidden="true"></i></button> -->
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card-body">
+      <h4 class="card-title">Add New Category</h4>
+      <hr>
+      <div class="form">
+        <div class="form-group">
+          <label>Category</label>
+          <input type="text" name="newCategory" class="form-control" [(ngModel)]="newCategory">
+        </div>
+        <button type="button" class="btn btn-info" (click)="addCategory()" [disabled]="btnDisabled">Add
+          Category</button>
+      </div>
+    </div>
+  </div>
+</section>

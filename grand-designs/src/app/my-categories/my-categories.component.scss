@@ -1,0 +1,15 @@
+.list-group {
+  .flex {
+    .list-group-item {
+      padding: 3px 0 3px 20px !important;
+    }
+    display: flex;
+    margin: 2px 0px;
+    .btn-save,
+    .btn-cancel,
+    .btn-delete,
+    .btn-edit {
+      margin: 0px 0px 0px 5px;
+    }
+  }
+}

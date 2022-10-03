@@ -1,0 +1,74 @@
+<section id="address">
+  <div class="container p-5">
+    <h4 class="display-4">My Shipping Address</h4>
+    <hr>
+    <app-message></app-message>
+    <div *ngIf="!currentAddress" class="m-auto">
+      <h1 class="text-center display-3 mt-5">
+        <i class="fa fa-spinner fa-spin"></i>
+      </h1>
+    </div>
+    <div *ngIf="currentAddress" class="card bg-light">
+      <div class="card-body">
+        <form [formGroup]="shippingForm" (ngSubmit)="onSubmit(shippingForm)">
+          <div class="form-group">
+            <div class="form-edit">
+              <label>Address 1</label>
+              <button *ngIf="checkoutButton" type="button" class="btn btn-sm btn-danger" (click)="editAddress()"
+                [disabled]="btnDisabled">Edit
+                address</button>
+            </div>
+            <input type="text" formControlName="address1" class="form-control form-edit-input"
+              [(ngModel)]="currentAddress.addr1">
+          </div>
+          <div class="form-group">
+            <label>Address 2</label>
+            <input type="text" formControlName="address2" class="form-control" [(ngModel)]="currentAddress.addr2">
+          </div>
+          <div class="form-group">
+            <label>Mobile</label>
+            <input type="number" formControlName="mobile" class="form-control" required
+              [(ngModel)]="currentAddress.mobile">
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" formControlName="city" class="form-control" [(ngModel)]="currentAddress.city">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>State</label>
+                <input type="text" formControlName="state" class="form-control" [(ngModel)]="currentAddress.state">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label>Postal Code</label>
+                <input type="number" formControlName="postalCode" class="form-control"
+                  [(ngModel)]="currentAddress.postalCode">
+              </div>
+            </div>
+          </div>
+          <!-- <div class="form-group">
+            <label>Country</label>
+            <input type="text" formControlName="country" class="form-control" [(ngModel)]="currentAddress.country">
+          </div> -->
+          <div class="edit-footer-buttons">
+
+            <button *ngIf="checkoutButton" type="button" class="btn btn-sm btn-danger"
+              (click)="checkout()">Checkout</button>
+
+            <button *ngIf="!checkoutButton && !editButtons" type="submit" class="btn btn-sm btn-danger">Change
+              Address</button>
+
+            <button *ngIf="editButtons" type="submit" class="btn btn-sm btn-danger">Save</button>
+            <button *ngIf="editButtons" type="button" class="btn btn-sm btn-danger"
+              (click)="cancelEdit()">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

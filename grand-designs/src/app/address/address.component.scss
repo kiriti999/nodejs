@@ -1,0 +1,16 @@
+.form-edit {
+  display: flex;
+  justify-content: space-between;
+  button {
+    margin-bottom: 15px;
+  }
+}
+
+.form-edit-input {
+  margin-top: 10px;
+}
+
+.edit-footer-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}

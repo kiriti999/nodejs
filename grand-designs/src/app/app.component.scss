@@ -1,0 +1,250 @@
+#searchBtn {
+  cursor: pointer;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.lead {
+  font-size: 14px;
+}
+
+@mixin heder-text {
+  color: white;
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 700;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    width: 75%;
+  }
+
+  .header-logo {
+    flex-basis: 20%;
+    svg {
+      cursor: pointer;
+    }
+  }
+  .header-search-bar {
+    align-self: center;
+    flex-basis: 40%;
+  }
+
+  .header-categories {
+    align-self: center;
+    a {
+      @include heder-text();
+    }
+    a:hover {
+      border: solid 1px white;
+    }
+  }
+
+  .header-account-drop-down {
+    // position: relative;
+    // display: flex;
+    // justify-content: space-between;
+
+    ul.drop-menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      display: none;
+      list-style: none;
+    }
+    // ul:hover {
+    //     color: #000;
+    // }
+  }
+
+  .dropbtn {
+    border: none;
+    height: 50px;
+    @include heder-text();
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    border: solid 1px white;
+  }
+
+  .header-cart {
+    .nav-link {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    align-self: center;
+    a {
+      @include heder-text();
+    }
+    a:hover {
+      border: solid 1px white;
+    }
+  }
+  .mobile-header-search-bar {
+    display: none;
+  }
+}
+
+.mobile-links {
+  display: none;
+  a {
+    color: white;
+  }
+}
+.my-hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: "480px") {
+  .header {
+    flex-wrap: wrap;
+    .logo {
+      width: 55%;
+      stroke: white;
+      padding-top: 3px;
+    }
+    .header-logo {
+      padding-left: 8px;
+      flex-basis: 80%;
+    }
+    .icon {
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+
+    .mobile-header-search-bar {
+      display: block;
+      flex-basis: 100%;
+      padding: 3px 8px 8px 8px;
+      border-radius: 3px;
+    }
+  }
+
+  .header-search-bar,
+  .header-categories,
+  .header-account-drop-down,
+  .header-cart {
+    display: none;
+  }
+
+  .mobile-links {
+    background: dimgrey;
+    text-align: end;
+    a,
+    .mobile-search-bar {
+      padding: 14px 6px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+      color: white;
+    }
+  }
+  .my-hamburger {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 13px;
+    color: white;
+    padding: 0 15px;
+    font-size: 18px;
+  }
+
+  /* The subnavigation menu */
+  .subnav {
+    overflow: hidden;
+  }
+
+  /* Subnav button */
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  /* Style the subnav content - positioned absolute */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    width: 100%;
+    z-index: 1;
+  }
+
+  /* Style the subnav links */
+  .subnav-content a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* When you move the mouse over the subnav container, open the subnav content */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
+
+  .subnavbtn:hover .subnav-content {
+    display: block;
+  }
+
+  .subnav-content:hover {
+    display: block;
+  }
+}

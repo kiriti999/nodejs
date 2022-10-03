@@ -1,0 +1,30 @@
+<div>
+  <form #editForm="ngForm" (ngSubmit)="postChanges(editProduct)" novalidate>
+    <div class="form-group">
+      <label class="form-control-label">Title</label>
+      <input type="text" name="title" class="form-control" [(ngModel)]="editProduct.title" required>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Price</label>
+      <input type="number" name="price" class="form-control" [(ngModel)]="editProduct.price" required>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <select name="categoryId" [(ngModel)]="editProduct.category._id" class="custom-select" required>
+        <option *ngFor="let category of categories" [value]="category._id">
+          {{ category.name }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea class="form-control" name="description" rows="5" [(ngModel)]="editProduct.description"
+        required></textarea>
+    </div>
+    <div class="form-group">
+      <label>Upload Image</label>
+      <input type="file" class="form-control-file" accept="image/*" name="file" (change)="fileChange($event)">
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!editForm.form.valid">Post</button>
+  </form>
+</div>

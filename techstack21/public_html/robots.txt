@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: public_html/assets/img/likes
+Disallow: public_html/commons.json
+Disallow: /server.key
+Disallow: /server.crt
+Disallow: /webpack.config.js
+Disallow: /Profile
+Disallow: /bower.json
+Disallow: /.bowerrc
+Disallow: /.gitignore
+Disallow: /GruntFile.js
+Disallow: /scratch
+Disallow: /package.json
+Disallow: /node_modules

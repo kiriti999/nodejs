@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+}
+
+body,
+html {
+  /*height: 100%;*/
+  min-height: 100vh;
+}
+
+.footer,
+body,
+html {
+  position: relative;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  flex: 1;
+}
+
+.main {
+  padding: 33px 43px 0;
+}
+
+li,
+ul {
+  list-style: none;
+}
+
+.cursor_pointer,
+.editor-icons,
+ul > li,
+h4 > a,
+a {
+  cursor: pointer;
+}
+
+h4 > a,
+p,
+raw,
+.text_content,
+.blog_item_title,
+#brief_topic_details {
+  text-align: justify;
+}
+
+.clear,
+.footer {
+  clear: both;
+}
+
+.content {
+  min-height: calc(100vh - 70px);
+}
+
+.article_wrap {
+  padding: 60px 5% 0;
+}
+
+.article_wrap > .social {
+  left: 15px;
+}
+
+.article_subwrap {
+  padding: 20px 6%;
+}
+
+code,
+kbd,
+pre,
+samp {
+  height: auto;
+  max-height: 400px;
+  overflow: auto;
+}
+
+pre {
+  font-style: normal;
+  font-variant: normal;
+  display: block;
+  padding: 9.5px;
+  margin: 0;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.pre {
+  white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+  white-space: pre-wrap; /* Opera */
+  white-space: -o-pre-wrap; /* Opera */
+  white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+  word-wrap: break-word; /* IE 5.5+ */
+}
+
+.menu-links a {
+  text-decoration: none;
+  display: inline-block;
+  /* padding: 10px 20px */
+}
+
+.underline_on_hover:hover,
+ul > li:hover {
+  text-decoration: underline;
+}
+
+.editor-bar {
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.editor-icons {
+  max-width: 63px;
+  padding: 8px;
+  width: 40px;
+}
+
+#addCategory {
+  flex: 1;
+  align-self: center;
+  flex-basis: 13%;
+  margin-bottom: 15px;
+}
+
+.sidebar {
+  margin-bottom: 20px;
+  height: 35px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.topicModal {
+  height: auto;
+  max-height: 500px;
+  min-height: 200px;
+  overflow: auto;
+}
+
+.listing-items {
+  margin: 0 0 35px;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.listing-items img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.listing-items .col-md-12 {
+  margin-bottom: 5px;
+}
+
+#brief_topic_details {
+  white-space: pre-wrap;
+}
+
+raw {
+  margin: 0 0 10px;
+}
+
+.comment_modal_width {
+  width: 35%;
+}
+
+#slideIcon {
+  padding-top: 12px;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.no_padding {
+  padding: 0;
+}
+
+.padding_top10 {
+  padding-top: 10px;
+}
+
+.padding_12_0 {
+  padding: 12px 0;
+}
+
+.padding_right_zero {
+  padding-right: 0;
+}
+
+.margin_left_minus_50 {
+  margin-left: -50px;
+}
+
+.margin_bottom2 {
+  margin-bottom: 2px;
+}
+
+.margin_bottom5 {
+  margin-bottom: 5px !important;
+}
+
+.margin_bottom10 {
+  margin-bottom: 10px !important;
+}
+
+#loadMore,
+#loadMore:focus {
+  cursor: pointer;
+  justify-content: center;
+  padding: 4px 24%;
+  text-align: center;
+  background-color: #4267b2;
+  color: #fff;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+  border-color: #fff;
+  box-shadow: 0 1px 1px #ccc;
+  transition: all 600ms ease-in-out;
+  -webkit-transition: all 600ms ease-in-out;
+  -moz-transition: all 600ms ease-in-out;
+  -o-transition: all 600ms ease-in-out;
+}
+
+#loadMore:hover {
+  background-color: #4267b2;
+  color: #fff;
+}
+
+#disqus_thread {
+  padding-bottom: 10px;
+}
+
+.footer {
+  height: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#footerText {
+  width: 100%;
+  background-color: #000;
+}
+
+.fadeInAnimation {
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.input-required {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

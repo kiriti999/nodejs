@@ -1,0 +1,196 @@
+/*@font-face{font-family:BebasNeue;src:url(/assets/fonts/bebas/TTF/BebasNeueRegular.ttf) format("opentype")}@font-face{font-family:BebasNeue;src:url(/assets/fonts/bebas/TTF/BebasNeueBook.ttf) format("opentype")}@font-face{font-family:BebasNeue;font-weight:700;src:url(/assets/fonts/bebas/TTF/BebasNeueBold.ttf) format("opentype")}@font-face{font-family:Mosk;font-weight:lighter;src:url("/assets/fonts/Mosk/Mosk Light 300.ttf") format("truetype")}@font-face{font-family:Mosk;font-weight:400;src:url("/assets/fonts/Mosk/Mosk Normal 400.ttf") format("truetype")}@font-face{font-family:Mosk;font-weight:700;src:url(/assets/fonts/Mosk/MoskBold700.ttf) format("truetype")}@font-face{font-family:Mosk;font-weight:bolder;src:url("/assets/fonts/Mosk/Most Ultra-Bold 900.ttf") format("truetype")}@font-face{font-family:Glober;font-weight:700;src:url("/assets/fonts/glober/Glober Thin Free.otf") format("opentype")}@font-face{font-family:Glober;font-weight:700;src:url("/assets/fonts/glober/Glober SemiBold Free.otf") format("opentype")}@font-face{font-family:aileron;font-weight:700;src:url(/assets/fonts/aileron/Aileron-Black.otf) format("opentype")}@font-face{font-family:aileron;font-weight:700;src:url(/assets/fonts/aileron/Aileron-Bold.otf) format("opentype")}@font-face{font-family:aileron;font-weight:lighter;src:url(/assets/fonts/aileron/Aileron-Thin.otf) format("opentype")}!
+ * Bootstrap Modal
+ *
+ * Copyright Jordan Schroter
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+
+    Created on : 30 Aug, 2017, 1:42:56 PM
+    Author     : kiriti
+
+*/
+
+html, body {
+    font-size: 100%;  /*This means 16px by default;*/
+    color: #333;
+}
+
+html, 
+body,
+.bold,
+.extrabold,
+.thin,
+.ultrabold,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+strong {
+    font-family: Assistant;
+}
+
+body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
+    font-size-adjust: 100%;
+    webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust:100%;
+    -ms-text-size-adjust:100%;
+}
+
+#page {
+    font-size: 1em;
+    /*equivalent to 16px*/ 
+    line-height: 1.25;
+    /*equivalent to 20px*/ 
+}
+
+h1 {
+    font-size: 2em;
+    /*2x body copy size = 32px*/ 
+    line-height: 1.25;
+    /*45px / 36px*/ 
+}
+
+h2 {
+    font-size: 1.625em;
+    /*1.625x body copy size = 26px*/ 
+    line-height: 1.15384615;
+    /*30px / 26px*/ 
+}
+
+h3 {
+    font-size: 1.375em;
+    /*1.375x body copy size = 22px*/ 
+    line-height: 1.13636364;
+    /*25px / 22px*/ 
+}
+
+h4 {
+    font-size: 1.125em;
+    /*1.125x body copy size = 18px*/ 
+    line-height: 1.11111111;
+}
+
+.bold,
+h4,
+h5,
+strong {
+    font-weight: 600
+}
+
+.extrabold {
+    font-weight: 800
+}
+
+.ultrabold {
+    font-weight: 900
+}
+
+p {
+    line-height: 20px
+}
+
+blockquote {
+    font-size: 1.25em;
+    /*20px / 16px*/ 
+    line-height: 1.25;
+    /*25px / 20px*/ 
+}
+
+blockquote,
+p,
+raw {
+    font-family: Assistant;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1.6em;
+    white-space: pre-wrap;
+}
+pre {
+    line-height: 18.57px;
+}
+
+code,
+kbd,
+pre,
+samp{
+    font-family: monospace, monospace !important;
+    color: #c7254e;
+}
+
+code {
+    white-space: pre !important;
+    overflow: scroll;
+    font-size: 13px !important;
+}
+
+raw{
+    font-size: calc(16px + 0.4vmin);
+    word-spacing: 3px;
+}
+
+.icon i {
+    font-size:1em;
+}
+
+.cbp-spmenu a:hover {
+    font-weight: 700;
+}
+
+ul.menu-links{
+    font-size: calc(14px + .4vmin);
+}
+
+h4 > a{
+    font-weight: 700;
+}
+
+#footerText {
+    font-size: 14px;
+}
+
+
+
+@media (min-width: 43.75em) {
+    h1 {
+        font-size: 2.5em;
+        /*2.5x body copy size = 40px*/ 
+        line-height: 1.125;
+    }
+    h2 {
+        font-size: 2em;
+        /*2x body copy size = 32px*/ 
+        line-height: 1.25;
+    }
+    h3 {
+        font-size: 1.5em;
+        /*1.5x body copy size = 24px*/ 
+        line-height: 1.25;
+    }
+    h4 {
+        line-height: 1.22222222;
+        /*(22px / 18px)*/ 
+    }
+}
+
+@media (min-width: 56.25em) {
+    h1 {
+        font-size: 3em;
+        /*3x body copy size = 48px*/ 
+        /*line-height: 1.05;*/
+        /*keep to a multiple of the 20px line height and something more appropriate for display headings*/ 
+    }
+    h2 {
+        font-size: 2.25em;
+        /*2.25x body copy size = 36px*/ 
+        line-height: 1.25;
+    }
+    h3 {
+        font-size: 1.75em;
+        /*1.75x body copy size = 28px*/ 
+        line-height: 1.25;
+    }
+}

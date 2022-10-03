@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1 Sep, 2017, 5:53:40 AM
+    Author     : kiriti
+*/
+
+
+/******************************colors:Start***********************************/
+.create_button, btn-primary, #footerText{
+    color: #fff ! important;
+}
+#menu-logo, .cbp-spmenu h3, .cbp-spmenu a, .cbp-spmenu a:hover{
+    color: #000;
+}
+.float-panel a, .logo,
+.menu-links a  {
+    color: #444;
+}
+
+.icon.social {
+    color:#333;
+}
+
+.icon.social:hover {
+    color:#6d6e71;
+}
+
+.editor-icons:hover {
+    color: orange
+}
+
+.blog_time {
+    color: #9E99AE
+}
+
+#menuClose{
+    color: #58595B;
+}
+
+.float-panel .fa-gg {
+    color: #F0595C;
+}
+
+.mobile_likes_views{
+    color: silver
+}
+
+h4 > a{
+    color: #333 !important;
+}
+
+/******************************colors:End***********************************/

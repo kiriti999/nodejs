@@ -1,0 +1,86 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 Aug, 2017, 1:17:01 PM
+    Author     : kiriti
+*/
+
+/* This gets Google to fall into place */
+.social {
+    position: fixed;
+    padding-top: 20px;
+}
+
+/* This gets Facebook to fall into place */
+.social iframe {
+    vertical-align: middle;
+}
+
+/* Set an optional width for your button wrappers */
+.social span {
+    display: inline-block;
+    width: 110px;
+    margin-bottom: 20px;
+}
+
+/* Adjust the widths individually if you like */
+.social .google {
+    width: 75px;
+}
+
+/*SOCIAL ICONS*/
+.icon {
+    position:relative;
+    text-align:center;
+    width:0px;
+    height:0px;
+    padding:14px;
+    border-top-right-radius: 	10px;
+    border-top-left-radius: 	10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 	10px; 
+    -moz-border-radius: 		20px 20px 20px 20px;
+    -webkit-border-radius: 		20px 20px 20px 20px;
+    -khtml-border-radius: 		20px 20px 20px 20px;
+}
+.icon i {
+    position:absolute;
+    left:9px;
+    top:6px;
+}
+.icon.social {
+    float:left;
+    margin:0 5px 0 0;
+    cursor:pointer;
+    background:#FBD103 ;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s; 	
+}
+.icon.social:hover {
+    background:#262626 ;
+    transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -webkit-filter:	drop-shadow(0 1px 10px rgba(0,0,0,.8));
+    -moz-filter: 	drop-shadow(0 1px 10px rgba(0,0,0,.8));
+    -ms-filter: 		drop-shadow(0 1px 10px rgba(0,0,0,.8));
+    -o-filter: 		drop-shadow(0 1px 10px rgba(0,0,0,.8));
+    filter: 			drop-shadow(0 1px 10px rgba(0,0,0,.8));	 	
+}
+.icon.social.fb i {
+    left:10px;
+    top:7px;
+}
+.icon.social.tw i {
+    left:8px;
+}
+.icon.social.in i {
+    left:8px;
+}
+/*SOCIAL ICONS*/

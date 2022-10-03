@@ -1,0 +1,51 @@
+/* 
+    Created on : 29 Aug, 2017, 12:09:01 AM
+    Author     : kiriti
+
+*/
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    flex: 1
+}
+
+.flex-item-center{
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+}
+
+#loginLogo {
+    width: 300px!important
+}
+
+.signupBox {
+    background: #f0f2f7;
+    padding: 16px 35px 27px 35px;
+}
+
+.signup_subtite{
+    margin: 10px 0px;
+}
+
+.signupBox h4{
+    margin-top: 0px !important;
+    text-align: center;
+}
+
+.fb {
+    background: #6079a2;
+}
+
+.gp {
+    background: #cc473d;
+}
+
+.fb, .gp {
+    color: white;
+    text-align: center;
+    padding: 10px 60px;
+    cursor: pointer;
+}

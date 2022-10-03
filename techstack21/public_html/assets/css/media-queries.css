@@ -1,0 +1,286 @@
+/* 
+    Created on : 1 Sep, 2017, 7:21:24 AM
+    Author     : kiriti
+*/
+
+#slideIcon {
+  display: none;
+}
+
+.fb-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .mobile_center {
+    display: block;
+    margin-top: 60px;
+  }
+  .menu-links li.flex-item {
+    display: none;
+  }
+  #slideIcon {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 15px;
+  }
+  .logo > svg {
+    top: 13px;
+    position: absolute;
+    left: 17px;
+    height: 53px;
+  }
+  .flex-item.flex-menu-items {
+    flex: 75%;
+    top: 20px;
+    position: absolute;
+    right: 0;
+  }
+  #loginLogo {
+    display: none;
+  }
+  .listing-items {
+    margin: 0 0 -40px;
+  }
+  .mobile_margin_bottom10 {
+    margin-bottom: 10px;
+  }
+  .mobile_margin_top70 {
+    margin-top: 70px;
+  }
+  .margin_left_minus_50 {
+    margin-left: -30px;
+  }
+  .main {
+    padding: 0;
+  }
+  .article_wrap {
+    padding: 0px 0 0;
+  }
+  #signup > #wraper {
+    margin-top: 140px;
+  }
+  .article_subwrap {
+    padding: 48px 0 0px 0;
+  }
+  .pad5555 {
+    padding: 25px 0;
+    margin: 0 0 40px;
+  }
+  .listing-items {
+    padding: 25px 2px;
+    border: none;
+  }
+  p {
+    text-align: left;
+  }
+  /* .menu-links>li:nth-child(-n+7) {
+        display: none
+    } */
+  li.flex-item.loginBtn.loginBtn-facebook {
+    display: none;
+  }
+  .fb-mobile {
+    border-radius: 5px 5px;
+    margin: 5px 5px;
+    display: block;
+  }
+  .fb-mobile > a {
+    padding: 5px 5px !important;
+    text-align: center;
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+    padding: 5px 5px;
+  }
+  .fb-mobile > a:hover {
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+  }
+  .Facebook {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+  .mobile_center {
+    display: block;
+  }
+  .menu-links li.flex-item {
+    display: none;
+  }
+  #slideIcon {
+    display: flex;
+  }
+  li.flex-item.loginBtn.loginBtn-facebook {
+    display: none;
+  }
+  .fb-mobile {
+    border-radius: 5px 5px;
+    margin: 5px 5px;
+    display: block;
+  }
+  .fb-mobile > a {
+    padding: 5px 5px !important;
+    text-align: center;
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+    padding: 5px 5px;
+  }
+  .fb-mobile > a:hover {
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+  }
+  .logo > svg {
+    top: 13px;
+    position: absolute;
+    left: 8px;
+    height: 60px;
+  }
+  .flex-item.flex-menu-items {
+    flex: 75%;
+    top: 20px;
+    position: absolute;
+    right: 0;
+  }
+  .main {
+    padding: 0;
+  }
+  #loginLogo {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+  .mobile_center {
+    display: block;
+  }
+  .menu-links li.flex-item {
+    display: none;
+  }
+  li.flex-item.loginBtn.loginBtn-facebook {
+    display: none;
+  }
+  .fb-mobile {
+    border-radius: 5px 5px;
+    margin: 5px 5px;
+    display: block;
+  }
+  .fb-mobile > a {
+    padding: 5px 5px !important;
+    text-align: center;
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+    padding: 5px 5px;
+  }
+  .fb-mobile > a:hover {
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+  }
+  .main {
+    padding: 0;
+  }
+  .logo > svg {
+    top: 13px;
+    position: absolute;
+    left: 8px;
+    height: 60px;
+  }
+  .flex-item.flex-menu-items {
+    flex: 75%;
+    top: 20px;
+    position: absolute;
+    right: 0;
+  }
+  #loginLogo {
+    display: none;
+  }
+  #slideIcon {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    min-height: 800px;
+  }
+  .menu-links li.flex-item {
+    display: none;
+  }
+  .mobile_center {
+    display: block;
+  }
+  li.flex-item.loginBtn.loginBtn-facebook {
+    display: none;
+  }
+  .fb-mobile {
+    display: block;
+    border-radius: 5px 5px;
+    margin: 5px 5px;
+  }
+  .fb-mobile > a {
+    padding: 5px 5px !important;
+    text-align: center;
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+    padding: 5px 5px;
+  }
+  .fb-mobile > a:hover {
+    padding: 5px 5px;
+    text-align: center;
+    color: white;
+  }
+  li.flex-item {
+    display: none;
+  }
+  /* .menu-links>li:nth-child(-n+7), */
+  .menu-links li,
+  #slideIcon {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 40px;
+  }
+  .logo > svg {
+    top: 13px;
+    position: absolute;
+    left: 8px;
+    height: 60px;
+  }
+  .flex-item.flex-menu-items {
+    flex: 75%;
+    top: 20px;
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .Facebook {
+    display: none;
+  }
+  .main {
+    padding: 0;
+  }
+  .menu-links li.flex-item {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .main {
+    padding: 0;
+  }
+  .menu-links li.flex-item {
+    display: none;
+  }
+}

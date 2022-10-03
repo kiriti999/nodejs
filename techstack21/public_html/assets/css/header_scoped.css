@@ -1,0 +1,36 @@
+/* 
+    Created on : 26 Aug, 2017, 3:58:32 AM
+    Author     : kiriti
+*/
+
+#header_height {
+  height: 50px;
+}
+.flex-menu-items {
+  flex-basis: 20%;
+}
+.main-menu-item {
+  margin-right: 2.7em;
+  /*margin-left: 4.4em;*/
+}
+.close {
+  opacity: 1 !important;
+}
+.create_button {
+  background: #4267b2;
+  margin-top: -1.3px;
+  border: none;
+  border-radius: 1px;
+  padding: 2px 5px !important;
+}
+
+.create_button:hover {
+  background: #6079a2;
+}
+
+.logo > svg {
+  top: 16px;
+  position: absolute;
+  left: 25px;
+  height: 68px;
+}

@@ -1,0 +1,26 @@
+/* 
+    Created on : 28 Aug, 2017, 4:47:38 AM
+    Author     : kiriti
+*/
+.cbp-spmenu-right.cbp-spmenu-open{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}        
+#menuClose{
+    right: 12%;
+    position: absolute;
+    flex: 1;
+    cursor: pointer;
+    align-self: center;
+    margin: 0 auto;
+    text-align: center;
+}
+#menu-logo{
+    width: 142%;
+    padding: 20px;
+    margin: 0;
+    flex: 1;
+    background: #fff;
+    height: 102%;
+    margin-right: 54px;
+}

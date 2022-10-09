@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <script async src="https://cdn.ampproject.org/v0.js"></script> -->
+
+
+    <title>techstack21 - tech blog</title>
+    <link rel="shortcut icon" href="vectorpaint.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="Java, Javascript, Nodejs, Social login, Bootstrap, HTML, CSS, Spring, Hibernate, Microservices, Javalite, Active JDBC, SparkJava, SparkJava.com, Heroku, Social Share, FB Share as Page, JPA, MongoDb, Google Contacts. Tutorials, Careers, Jobs, Training, Learn Java, Express JS, JointJS, D3js, AngularJS, SQL">
+    <meta name="description"
+        content="Find articles on tech blogs, articles, coding and updates. Mainly focused on sharing knowledge on new technologies (languages, libraries, coding, popularity etc)">
+    <meta name="fragment" content="!">
+
+    <!--Facebook client id-->
+    <meta property="fb:app_id" content="227923824483815" />
+
+
+    <!--open graph meta tags-->
+    <meta property="og:title" content="techstack21 - latest blogs" />
+    <meta property="og:description" content="Tech blogs, articles, coding and updates" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.techstack21.herokuapp.com" />
+    <meta property="og:site_name" content="techstack21.com" />
+    <!--open graph meta tags-->
+
+
+    <!--twitter meta tags-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@techstack21" />
+    <meta name="twitter:creator" content="@techstack21" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800" rel="stylesheet">
+
+    <!--Final css minified-->
+    <link href="assets/css/styles.css" rel="stylesheet" type="text/css" />
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6721580123742774",
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <blog_slide_menu></blog_slide_menu>
+        <header_tag></header_tag>
+        <logout_tag></logout_tag>
+
+        <div class="article_wrap">
+            <div class="social">
+                <span class="Facebook">
+                    <!-- <div class="fb-like" data-href="https://www.techstack21.herokuapp.com/" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div> -->
+                </span>
+            </div>
+
+            <div class="col-md-12 no_padding">
+                <article></article>
+                <post_blog></post_blog>
+                <blog_sidebar></blog_sidebar>
+            </div>
+        </div>
+
+        <blog_edit_modal></blog_edit_modal>
+        <blog_posting_modal></blog_posting_modal>
+        <signup_popup></signup_popup>
+    </div>
+
+
+    <footer_tag></footer_tag>
+
+    <script>
+        var commons = {};
+        var SharedMixin, DataMixin;
+        var header, slide, post, sidebar, footer = null;
+//        var details;
+    </script>
+
+
+
+    <!--vendor files-->
+    <script src="assets/vendor/js/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
+        type="text/javascript"></script>
+
+
+    <!--custom js-->
+    <script src="assets/js/bundle.js" type="text/javascript"></script>
+
+
+
+    <!--Get data on page load-->
+    <script>
+        window.onload = function () {
+            DataMixin.get_data_page_load();
+        };
+    </script>
+
+
+    <!--Load data on scroll-->
+    <script>
+
+        function loadMore() {
+            if (DataMixin.data.categoryType == 'All') {
+                console.log('getting more articles...');
+                DataMixin.get_data_on_scrollEnd(3, DataMixin.data.topics.length + 1);
+            }
+        }
+
+        function throttle(fn, wait) {
+            var time = Date.now();
+            return function () {
+                if ((time + wait - Date.now()) < 0) {
+                    fn();
+                    time = Date.now();
+                }
+            }
+        }
+
+        function bindScroll() {
+            console.log('scroll check...');
+            if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+                $(window).unbind('scroll');
+                setTimeout(function () {
+                    loadMore();
+                }, 300)
+            }
+        }
+
+        $(window).scroll(throttle(bindScroll, 50));
+    </script>
+
+
+    <!--float panel-->
+    <script>
+        $(document).ready(function () {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent) == false) {
+                // new McFloatPanel();
+            }
+        });
+    </script>
+
+
+
+
+    <!---------------------------VENDOR SCRIPTS/FUNCTIONS:START--------------------------------->
+
+    <!--Facebook script/sdk for sharing post, likes etc-->
+    <script>
+        $(document).ready(function () {
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '695032737545493',
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v3.2'
+                });
+                FB.AppEvents.logPageView();
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) { return; }
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        });
+    </script>
+
+
+    <!--Google api: Start-->
+    <!--Google api: Start-->
+    <script>
+        window.___gcfg = {
+            lang: 'en-US',
+            parsetags: 'explicit'
+        };
+    </script>
+    <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+    <!--Google api-->
+    <script>
+        function start() {
+            gapi.load('auth2', function () {
+                window.auth2 = gapi.auth2.init({
+                    // client_id: '348308192190-2qt7m0fdfalqi6kgqu4ui0lkp1igaarq.apps.googleusercontent.com',
+                    client_id: '1073206522834-9b15arqe963f5f669sufga1k0dc9nq94.apps.googleusercontent.com',
+                    scope: 'https://www.googleapis.com/auth/blogger'
+                });
+            });
+        }
+    </script>
+    <!--Google api: End-->
+    <!--Google api: End-->
+
+    <!---------------------------VENDOR SCRIPTS/FUNCTIONS:START--------------------------------->
+</body>
+
+</html>

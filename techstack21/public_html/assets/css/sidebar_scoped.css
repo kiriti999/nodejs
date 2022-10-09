@@ -1,0 +1,35 @@
+.category-block{
+    margin-top:40px;
+    margin-bottom: 20px;
+}
+
+.category-name, .add-category-icon, .category-save-icon, .category-delete-icon {
+    display: inline-block;
+}
+
+.category-name, .add-category-icon {
+    margin: 0 5px;
+}
+
+.category-save-icon > button, .category-delete-icon > button {
+    cursor:pointer
+}
+
+.category_list_parent {
+    /* display: flex; */
+}
+
+li[name='category-name'] {
+    flex: 90%;
+}
+
+li[name='remove-category-icon'] {
+    flex: 10%;
+}
+
+.category_list {
+
+    word-break: break-word;
+    margin: 6px 3px;
+    color: darkcyan;
+}

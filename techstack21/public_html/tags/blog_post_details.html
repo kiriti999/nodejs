@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>techstack21 Technologies - blog for latest technologies & programming questions</title>
+    <meta name='description' content="{{open_graph.description}}" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Assistant:200,300,400,600,700,800" rel="stylesheet">
+    <link href="../assets/css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../vectorpaint.ico">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article" />
+    <meta name='title' property="og:title" content="{{open_graph.title}}" />
+    <meta property="og:description" content="{{open_graph.description}}" />
+    <meta name='url' property="og:url" content="https://www.techstack21.herokuapp.com/" />
+    <meta property="og:site_name" content="techstack21.com" />
+    <meta name='image' property="og:image" content='https://www.techstack21.herokuapp.com/{{open_graph.url}}' />
+    <meta name='url_extra' content="{{open_graph.url}}" />
+    <meta name='details_extra' content="{{open_graph.details}}" />
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>{{slide_details | safe}}</div>
+        <header>{{header_details | safe}}</header>
+
+        <div class="article_wrap">
+            <div class="social">
+                <span class="Facebook">
+                    <!-- <div class="fb-like" data-href="{DataMixin.api_url}" data-layout="box_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div> -->
+                </span>
+            </div>
+            <div class="col-md-12 no_padding">
+                {{article_details | safe}}
+                <!-- {{sidebar_details | safe}} -->
+
+                <!-- <div class="col-md-2">
+                        <div class='row'>
+                            <div class="col-md-12 padding_right_zero">
+                                <div class="mobile_margin_top70" style="margin-bottom: 20px;">
+                                    <h5 class="sidebar">RECENT POSTS</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" id="recent_parent">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                <!-- <div class='row'>
+                            <div class="col-md-12">
+                                <div class='category-block'>
+                                    <div class='category-name'>
+                                        <h5 class=" sidebar">CATEGORY</h5>
+                                    </div>
+                                    
+                                    <ul each="{item, i in data.categories}" class='category_list_parent'>
+                                        <li class="category_list" name = 'category-name' >
+                                            <div id="{item._id}" name="{item.category}" onclick="{getArticleByCategory}">{item.category}</div>
+                                        </li>
+                                        <li class="category_list" name = 'remove-category-icon' if="{(typeof DataMixin !== 'undefined' && DataMixin !== null) && (DataMixin.getRole() === 'ROLE_ADMIN')}"> 
+                                            <span onclick="{deleteCategory}" id="{item._id}" name="{item.category}" class="glyphicon glyphicon-remove-circle"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> -->
+                <!-- </div> -->
+
+            </div>
+        </div>
+    </div>
+
+    <footer>{{footer_details | safe}}</footer>
+
+    <script src="../assets/vendor/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../assets/vendor/js/riot+compiler.min.js" type="text/javascript"></script>
+    <script src="../assets/vendor/js/classie.js" type="text/javascript"></script>
+
+    <script>
+        var self = this;
+        self.data = {};
+        self.data.recents = [];
+
+        $(document).ready(function () {
+            $('.mobile_center').css({ 'justify-content': 'center', 'flex': 1, 'display': 'flex' })
+        })
+
+
+        $('#adminLogin').click(function () {
+            window.location.href = window.location.origin + '/#!signup_popup';
+        });
+
+        $('#logout').click(function () {
+            $.ajax({
+                url: "/logout",
+                success: function (res) {
+                    console.log('res ', res);
+                    localStorage.setItem('role', 'ROLE_USER');
+                    localStorage.setItem('username', '');
+                    window.location.href = window.location.origin + '/#!signup_popup';
+                },
+                error: function (err) {
+                    console.log('err ', err);
+                }
+            });
+        });
+
+
+        function strip(html) {
+            var tmp = document.createElement("DIV");
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || "";
+        }
+
+
+        $('#fb_shareAsAdmin').click(function () {
+            var title = $('meta[name=title]').attr("content");
+            var url = $('meta[name=url_extra]').attr("content");
+            var description = $('meta[name=description]').attr("content");
+            var imageUrl = $('meta[name=image]').attr("content");
+
+            var params = {
+                title: title,
+                details: strip(description),
+                // imageurl: imageUrl,
+                url: 'https://www.techstack21.herokuapp.com/article/' + url
+            };
+            console.log('fb_shareAsAdmin params ', params);
+
+            $.ajax({
+                url: '/sharePost',
+                type: 'POST',
+                data: params,
+                success: function (res) {
+                    alert('FACEBOOK SHARE SUCCESS');
+                    console.log('FACEBOOK SHARE SUCCESS:', res);
+                },
+                error: function (err) {
+                    alert('FACEBOOK SHARE FAILED');
+                    console.log('FACEBOOK SHARE FAILED:', err);
+                }
+            });
+        });
+
+
+        $('#fb_shareAsUser').click(function () {
+            var title = $('meta[name=title]').attr("content");
+            var url = $('meta[name=url_extra]').attr("content");
+            var description = $('meta[name=description]').attr("content");
+            var imageUrl = $('meta[name=image]').attr("content");
+
+            console.log('fb_shareAsUser title:', title);
+            console.log('fb_shareAsUser url:', url);
+            console.log('fb_shareAsUser description:', (description));
+            console.log('fb_shareAsUser imageUrl:', imageUrl);
+
+            console.log('sharing posts as User...');
+            FB.ui({
+                // method: 'share_open_graph',
+                method: 'share',
+                action_type: 'og.shares',
+                action_properties: JSON.stringify({
+                    object: {
+                        'og:url': 'https://www.techstack21.herokuapp.com/article/' + url,
+                        'og:title': title,
+                        'og:description': description
+                        // 'og:image': imageUrl
+                    }
+                })
+            }, function (response) {
+                console.log('FACEBOOK FEED SHARE SUCCESS', response);
+            });
+        });
+
+        var menuRight = document.getElementById('cbp-spmenu-s2');
+        var showRightPush = document.getElementById('nav-icon3');
+        var menuClose = document.getElementById('menuClose');
+        var body = document.body;
+
+        showRightPush.onclick = function () {
+            classie.toggle(menuRight, 'cbp-spmenu-open');
+        };
+
+        menuClose.onclick = function () {
+            classie.toggle(menuRight, 'cbp-spmenu-open');
+            $('#cbp-spmenu-s2').removeClass('cbp-spmenu-open');
+        };
+
+        function getRecentPosts() {
+            self.data.recents = [];
+            var params = {
+                limit: 5,
+                offset: 0
+            };
+            $.ajax({
+                url: '/getRecent',
+                type: 'POST',
+                data: params,
+                success: function (res) {
+                    console.log('Recent posts success ', res);
+                    var $newList = $("<ul />");
+                    res.forEach(function (el, i) {
+                        $newList.append('<li class="padding_12_0"><a id=' + el._id + ' href=article/' + el.url + '>' + el.title + '</a></li>');
+                    });
+                    $('#recent_parent').append($newList);
+                },
+                error: function (err) {
+                    console.log('Recent posts failed ', err);
+                }
+            });
+        }
+        getRecentPosts();
+
+    </script>
+
+
+    <!--Facebook script/sdk for sharing post, likes etc-->
+    <script>
+        $(document).ready(function () {
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '227923824483815',
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v3.0'
+                });
+                FB.AppEvents.logPageView();
+            };
+
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        });
+    </script>
+
+    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+    <!--Google api-->
+    <script>
+        function start() {
+            gapi.load('auth2', function () {
+                window.auth2 = gapi.auth2.init({
+                    client_id: '348308192190-2qt7m0fdfalqi6kgqu4ui0lkp1igaarq.apps.googleusercontent.com',
+                    scope: 'https://www.googleapis.com/auth/blogger'
+                });
+            });
+        }
+    </script>
+
+    <!-- disqus -->
+    <script src="https://www-techstack21-com.disqus.com/embed.js" type="text/javascript"></script>
+    <script id="dsq-count-scr" src="//www-techstack21-com.disqus.com/count.js" async></script>
+</body>
+
+</html>

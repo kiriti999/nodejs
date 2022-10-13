@@ -33,7 +33,6 @@ const schema = {
 }
 const type = avsc.Type.forSchema(schema);
 
-
 const encoder = avsc.createFileEncoder('./users.avro', schema);
 
 function write(item) {

@@ -1,0 +1,17 @@
+{
+  "name": "apache-kafka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start:producer": "node ./node-rdkafka/producers/index.js",
+    "start:consumer": "node ./node-rdkafka/consumers/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "avsc": "^5.7.6",
+    "node-rdkafka": "^2.13.0"
+  }
+}
